@@ -36,6 +36,6 @@ yp_labels = np.array(yp_labels,dtype=int)
 #print (yp_labels)
 #print (y_test)
 
-# detailed classification report : precision, recall, F1-score
+# detailed classification report : precision, recall, F1-score!
 from sklearn import metrics
 print(metrics.classification_report(y_test, yp_labels, digits=3))
