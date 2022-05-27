@@ -30,8 +30,7 @@ param.probability = 1
 model = svm_train(prob, param)
 
 # testing the accuracy of the model
-yp_labels, p_acc, y_tests = svm_predict(y_test, X_test, model,"-b 1") #if -b 1, outputs also a list of probability estimates
-            is specified
+yp_labels, p_acc, y_tests = svm_predict(y_test, X_test, model,"-b 1") #if -b 1, outputs a list of probability estimates is specified
 yp_labels = np.array(yp_labels,dtype=int)
 #print (yp_labels)
 #print (y_test)
@@ -39,3 +38,7 @@ yp_labels = np.array(yp_labels,dtype=int)
 # detailed classification report : precision, recall, F1-score!
 from sklearn import metrics
 print(metrics.classification_report(y_test, yp_labels, digits=3))
+
+#saving the trained model
+svm_save_model('svm_model.model', model)
+
